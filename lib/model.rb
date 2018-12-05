@@ -1,5 +1,4 @@
 class Model
-
   attr_reader :data
 
   def initialize
@@ -22,7 +21,6 @@ class Model
 
   def parse(pair)
     key, value = pair.split('=')
-    {key => value}
+    { key => value }
   end
-
 end
