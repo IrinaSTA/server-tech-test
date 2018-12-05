@@ -1,6 +1,6 @@
 require 'socket'
 require 'rack'
-require_relative '../router.rb'
+require_relative './router.rb'
 # http_server.rb
 class Server
   attr_reader :method, :path, :query, :status, :headers, :body

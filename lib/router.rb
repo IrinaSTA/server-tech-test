@@ -1,4 +1,4 @@
-require_relative './lib/model'
+require_relative './model'
 # router.rb
 class Router
   def initialize(model = Model)

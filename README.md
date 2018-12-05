@@ -10,7 +10,7 @@ This is an http server written from scratch in Ruby. It can do two things:
 
 - form and clone this repo
 - run bundle install from root directory
-- from the terminal, run ```ruby server.rb```
+- from root directory, run ```ruby app.rb``` in the terminal
 - from a browser window, go to ```localhost:4000/set?somekey=somevalue``` and
   then to ```localhost:4000/set?key=somekey```
 

@@ -1,4 +1,4 @@
-require_relative '../../router'
+require_relative '../../lib/router'
 
 describe Router do
   let(:model_class) { double('Model') }
