@@ -1,11 +1,11 @@
-require File.join(File.dirname(__FILE__), '..', 'lib/router.rb')
+require File.join(File.dirname(__FILE__), '..', 'lib/controller.rb')
 require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 # require 'webmock/rspec'
 
-Capybara.app = Router.new
+Capybara.app = Controller.new
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [SimpleCov::Formatter::Console]
