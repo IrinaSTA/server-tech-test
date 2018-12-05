@@ -3,6 +3,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'webmock/rspec'
 
 Capybara.app = Router.new
 
