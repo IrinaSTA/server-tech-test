@@ -24,8 +24,8 @@ My code has three parts:
 - server.rb - this is an http server written in Ruby. It:
   - listens for a request from the browser
   - parses the request and passes it to controller
-  - returns response from router to the browser
-- router.rb - this is a controller written in Ruby. It:
+  - returns response from controller to the browser
+- controller.rb - this is a controller written in Ruby. It:
   - determines the right response based on request
   - returns response
 - model.rb - contains business logic written in Ruby. It:

@@ -1,11 +1,11 @@
 require 'socket'
 require 'rack'
-require_relative './router.rb'
+require_relative './controller.rb'
 # http_server.rb
 class Server
   attr_reader :method, :path, :query, :status, :headers, :body
 
-  def initialize(app = Router.new, port = 4000)
+  def initialize(app = Controller.new, port = 4000)
     @app = app
     @port = port
   end
@@ -23,7 +23,7 @@ class Server
     )
   end
 
-  def boot
+  def run
     @server = TCPServer.new @port
     while (session = @server.accept)
       request = session.gets

@@ -1,6 +1,6 @@
 require_relative './model'
-# router.rb
-class Router
+# controller.rb
+class Controller
   def initialize(model = Model)
     @model = model.new
   end
