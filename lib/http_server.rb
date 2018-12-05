@@ -1,14 +1,11 @@
-# http_server.rb
 require 'socket'
 require 'rack'
 require_relative '../router.rb'
-
-app = Router.new
-
+# http_server.rb
 class Server
   attr_reader :method, :path, :query, :status, :headers, :body
 
-  def initialize(app, port)
+  def initialize(app = Router.new, port = 4000)
     @app = app
     @port = port
   end
@@ -18,7 +15,7 @@ class Server
     @path, @query = full_path.split('?')
   end
 
-  def get_response
+  def response
     @status, @headers, @body = @app.call(
       'REQUEST_METHOD' => @method,
       'PATH_INFO' => @path,
@@ -28,7 +25,7 @@ class Server
 
   def boot
     @server = TCPServer.new @port
-    while session = @server.accept
+    while (session = @server.accept)
       request = session.gets
       puts request
       request_parts(request)
