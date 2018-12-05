@@ -8,7 +8,7 @@ This is an http server written from scratch in Ruby. It can do two things:
 
 ## How to Run It
 
-- form and clone this repo
+- fork and clone this repo
 - run bundle install from root directory
 - from root directory, run ```ruby app.rb``` in the terminal
 - from a browser window, go to ```localhost:4000/set?somekey=somevalue``` and
