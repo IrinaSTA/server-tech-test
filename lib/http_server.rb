@@ -6,7 +6,6 @@ require_relative '../router.rb'
 app = Router.new
 
 class Server
-
   attr_reader :method, :path, :query, :status, :headers, :body
 
   def initialize(app, port)
@@ -20,16 +19,16 @@ class Server
   end
 
   def get_response
-    @status, @headers, @body = @app.call({
+    @status, @headers, @body = @app.call(
       'REQUEST_METHOD' => @method,
       'PATH_INFO' => @path,
       'QUERY_STRING' => @query
-      })
+    )
   end
 
   def boot
     @server = TCPServer.new @port
-    while session = server.accept
+    while session = @server.accept
       request = session.gets
       puts request
       request_parts(request)
