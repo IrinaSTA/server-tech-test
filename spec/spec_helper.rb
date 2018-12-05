@@ -1,7 +1,10 @@
+require File.join(File.dirname(__FILE__), '..', 'router.rb')
 require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+Capybara.app = Router
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [SimpleCov::Formatter::Console]
