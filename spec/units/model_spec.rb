@@ -1,4 +1,4 @@
-require 'model'
+require_relative '../../lib/model'
 
 describe 'Model' do
   it 'can store a key value pair' do

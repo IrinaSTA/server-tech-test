@@ -1,4 +1,5 @@
-require 'http_server'
+require_relative '../../lib/http_server'
+require 'webmock/rspec'
 
 describe 'Server' do
   it 'can parse an http request' do
