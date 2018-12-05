@@ -6,19 +6,23 @@ class Model
     @data = {}
   end
 
-  def store(pair)
-    parse(pair).each { |key, value| @data[key] = value }
+  def store(query)
+    parse(query).each { |key, value| @data[key] = value }
   end
 
   def get(key)
     @data[key]
   end
 
+  def key(query)
+    parse(query)['key']
+  end
+
   private
 
   def parse(pair)
     key, value = pair.split('=')
-    return {key => value}
+    {key => value}
   end
 
 end

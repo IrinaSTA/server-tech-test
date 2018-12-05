@@ -14,4 +14,9 @@ describe 'Model' do
     expect(model.get('color')).to eq('blue')
   end
 
+  it 'can get key from query' do
+    model = Model.new
+    query = 'key=color'
+    expect(model.key(query)).to eq('color')
+  end
 end
