@@ -39,5 +39,3 @@ I've used the following gems:
 - Capybara for feature testing
 - Simplecov for test coverage
 - Rubocop for linting
-- Flog for code complexity
-- Rack for web server interface

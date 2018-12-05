@@ -1,5 +1,4 @@
 require 'socket'
-require 'rack'
 require_relative './controller.rb'
 # http_server.rb
 class Server
