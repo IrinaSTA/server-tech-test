@@ -4,7 +4,7 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
-Capybara.app = Router
+Capybara.app = Router.new
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [SimpleCov::Formatter::Console]
