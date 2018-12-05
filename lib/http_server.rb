@@ -29,7 +29,7 @@ class Server
       request = session.gets
       puts request
       request_parts(request)
-      get_response
+      response
       session.print "HTTP/1.1 #{@status}\r\n"
       @headers.each do |key, value|
         session.print "#{key}: #{value}\r\n"
