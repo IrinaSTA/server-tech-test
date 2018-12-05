@@ -1,9 +1,13 @@
 require_relative '../../router'
 
 describe Router do
-  let(:router) { Router.new }
+  let(:model_class) { double('Model') }
+  let(:model_instance) { instance_double('Model') }
+  let(:router) { Router.new(model_class) }
 
   it "can return 'Hello world!'" do
+    allow(model_class).to receive(:new).and_return(model_instance)
+    allow(model_instance).to receive(:store)
     status, headers, body = router.call(
       'REQUEST_METHOD' => 'GET',
       'PATH_INFO' => '/',
@@ -15,6 +19,8 @@ describe Router do
   end
 
   it "returns the right response to 'set' request" do
+    allow(model_class).to receive(:new).and_return(model_instance)
+    allow(model_instance).to receive(:store)
     status, headers, body = router.call(
       'REQUEST_METHOD' => 'GET',
       'PATH_INFO' => '/set',
@@ -26,6 +32,10 @@ describe Router do
   end
 
   it "returns the right response to 'get' request" do
+    allow(model_class).to receive(:new).and_return(model_instance)
+    allow(model_instance).to receive(:store)
+    allow(model_instance).to receive(:key)
+    allow(model_instance).to receive(:get).and_return('blue')
     router.call(
       'REQUEST_METHOD' => 'GET',
       'PATH_INFO' => '/set',

@@ -1,8 +1,8 @@
 require_relative './lib/model'
 # router.rb
 class Router
-  def initialize
-    @model = Model.new
+  def initialize(model = Model)
+    @model = model.new
   end
 
   def call(env)
