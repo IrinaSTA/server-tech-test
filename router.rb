@@ -1,6 +1,10 @@
 class Router
 
   def call(env)
-    return ['200', {'Content-Type' => 'text/html'}, ["Hello world! The time is #{Time.now}"]]
+    if env['PATH_INFO'].include? 'set'
+      return ['200', {'Content-Type' => 'text/html'}, []]
+    else
+      return ['200', {'Content-Type' => 'text/html'}, ['Hello world!']]
+    end
   end
 end
