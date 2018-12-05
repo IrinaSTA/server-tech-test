@@ -3,4 +3,4 @@ require_relative 'lib/router.rb'
 require_relative 'lib/http_server.rb'
 
 server = Server.new
-server.boot
+server.run

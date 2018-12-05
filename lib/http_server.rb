@@ -23,7 +23,7 @@ class Server
     )
   end
 
-  def boot
+  def run
     @server = TCPServer.new @port
     while (session = @server.accept)
       request = session.gets
