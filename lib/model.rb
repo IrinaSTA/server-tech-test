@@ -1,3 +1,4 @@
+# model.rb
 class Model
   attr_reader :data
 
